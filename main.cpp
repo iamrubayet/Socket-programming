@@ -40,7 +40,11 @@ int main() {
     server_addr.sin_port = htons(8080); // Port number
 
     // ip address to binary format
-    
+
+    if (inet_pton(AF_INET, ("0.0.0.0"), &server_addr.sin_addr) !=1) {
+
+    }
+
 
 
 
