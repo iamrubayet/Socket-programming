@@ -36,6 +36,11 @@ int main() {
 
     // create address structure
     sockaddr_in server_addr;
+    server_addr.sin_family = AF_INET; // IPv4
+    server_addr.sin_port = htons(8080); // Port number
+
+    // ip address to binary format
+    
 
 
 
