@@ -57,6 +57,9 @@ int main() {
         return 1;
     }
 
+    // listen
+    listen(server_fd, SOMAXCONN);
+
 
 
 
