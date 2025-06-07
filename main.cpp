@@ -3,6 +3,10 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <cstring>
+
+
+
+
 using namespace std;
 
 
@@ -40,11 +44,18 @@ int main() {
     server_addr.sin_port = htons(8080); // Port number
 
     // ip address to binary format
-
     if (inet_pton(AF_INET, ("0.0.0.0"), &server_addr.sin_addr) !=1) {
-
+        cout << "Setting IP address failed" << endl;
+        close(server_fd);
+        return 1;
     }
 
+    // bind ip ip with socket
+     if (::bind(server_fd, (struct sockaddr*)&server_addr, sizeof(server_addr)) == -1) {
+        perror("Bind failed");
+        close(server_fd);
+        return 1;
+    }
 
 
 
