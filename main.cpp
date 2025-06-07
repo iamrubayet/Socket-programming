@@ -34,6 +34,12 @@ int main() {
         return 1;
     }
 
+    // create address structure
+    sockaddr_in server_addr;
+
+
+
+
     std::cout << "Socket created successfully." << std::endl;
     close(server_fd);
     return 0;
